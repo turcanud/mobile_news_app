@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
 
 import '../../utils/widgets/carousel_widget.dart';
 import '../../utils/widgets/header_section_widget.dart';
 import '../../utils/widgets/news_list_widget.dart';
-import 'bloc/remote/remote_article_bloc.dart';
-import 'bloc/remote/remote_article_event.dart';
+import 'remote_article_controller.dart';
 
 class NewsPage extends StatefulWidget {
   const NewsPage({super.key});
@@ -16,6 +15,7 @@ class NewsPage extends StatefulWidget {
 
 class _NewsPageState extends State<NewsPage> {
   final ScrollController _scrollController = ScrollController();
+  final controller = Get.find<RemoteArticleController>();
 
   @override
   void initState() {
@@ -62,10 +62,11 @@ class _NewsPageState extends State<NewsPage> {
         ),
       ),
     );
-    context.read<RemoteArticleBloc>().add(GetMoreArticlesEvent());
+    controller.getMoreArticles();
     Future.delayed(const Duration(seconds: 1), () {
       if (mounted) Navigator.of(context, rootNavigator: true).pop();
     });
+    debugPrint("end reached");
   }
 
   @override

@@ -1,34 +1,26 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:presentation/pages/news/bloc/remote/remote_article_bloc.dart';
+import 'package:get/get.dart';
 
-import '../../pages/news/bloc/remote/remote_article_state.dart';
+import '../../pages/news/remote_article_controller.dart';
 import 'news_tile_widget.dart';
 
-class NewsListWidget extends StatelessWidget {
+class NewsListWidget extends GetView<RemoteArticleController> {
   const NewsListWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RemoteArticleBloc, RemoteArticleState>(
-      builder: (context, state) {
-        if (state is RemoteArticleLoading) {
-          return const Center(child: CupertinoActivityIndicator());
-        }
-        if (state is RemoteArticleError) {
-          return Center(child: Icon(Icons.refresh));
-        }
-        if (state is RemoteArticleReady) {
-          return Column(
-            children: List.generate(
-              state.articles!.length,
-              (index) => NewsTileWidget(article: state.articles![index]),
-            ),
-          );
-        }
-        return const Center(child: Text('No articles available'));
-      },
-    );
+    return Obx(() {
+      if (controller.status.value == RemoteArticleStatus.loading) {
+        return const Center(child: CircularProgressIndicator());
+      } else if (controller.status.value == RemoteArticleStatus.error) {
+        return Center(child: Text(controller.error.value));
+      }
+      return Column(
+        children: List.generate(
+          controller.articles.length,
+          (index) => NewsTileWidget(article: controller.articles[index]),
+        ),
+      );
+    });
   }
 }
