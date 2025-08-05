@@ -1,6 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'article_entity.freezed.dart';
+part of 'index/index.dart';
 
 @freezed
 abstract class ArticleEntity with _$ArticleEntity {
@@ -14,9 +12,4 @@ abstract class ArticleEntity with _$ArticleEntity {
     String? publishedAt,
     String? content,
   }) = _ArticleEntity;
-}
-
-@freezed
-abstract class SourceEntity with _$SourceEntity {
-  const factory SourceEntity({String? id, String? name}) = _SourceEntity;
 }

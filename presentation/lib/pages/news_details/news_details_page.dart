@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:common/constants/api_constants.dart';
-import 'package:domain/modules/articles/entities/article_entity.dart';
+import 'package:domain/modules/articles/entities/index/index.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -27,7 +27,7 @@ class NewsDetailsPage extends StatelessWidget {
       body: Container(
         margin: DesignConstants.kDefaultMargin,
         child: ListView(
-          children: [
+          children: <Widget>[
             ClipRRect(
               borderRadius: BorderRadius.all(Radius.circular(24.0)),
               child: CachedNetworkImage(

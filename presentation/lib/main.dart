@@ -1,4 +1,4 @@
-import 'package:di/injection_container.dart';
+import 'package:di/init_di.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:presentation/pages/news/bloc/remote/remote_article_bloc.dart';
@@ -8,7 +8,8 @@ import 'core/constants/design_constants.dart';
 import 'pages/news/news_page.dart';
 
 Future<void> main() async {
-  await initializeDependentcies();
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDependencies();
   runApp(const MyApp());
 }
 
@@ -17,19 +18,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<RemoteArticleBloc>(
-      create: (context) => serviceLocator()..add(const GetArticlesEvent()),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'News App',
-        home: Scaffold(
-          backgroundColor: DesignConstants.kBackgroundColor,
-          body: SafeArea(
-            child: Container(
-              margin: DesignConstants.kDefaultMargin,
-              child: NewsPage(),
+      create: (context) =>
+          serviceLocator<RemoteArticleBloc>()..add(const GetArticlesEvent()),
+      child: Builder(
+        builder: (context) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'News App',
+            home: Scaffold(
+              backgroundColor: DesignConstants.kBackgroundColor,
+              body: SafeArea(
+                child: Container(
+                  margin: DesignConstants.kDefaultMargin,
+                  child: NewsPage(),
+                ),
+              ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

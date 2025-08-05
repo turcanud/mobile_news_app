@@ -1,5 +1,5 @@
 import 'package:common/constants/api_constants.dart';
-import 'package:domain/modules/articles/entities/article_entity.dart';
+import 'package:domain/modules/articles/entities/index/index.dart';
 import 'package:flutter/material.dart';
 import 'package:presentation/core/constants/design_constants.dart';
 

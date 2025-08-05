@@ -1,10 +1,11 @@
-import 'package:domain/modules/articles/entities/article_entity.dart';
+import 'package:domain/modules/articles/entities/index/index.dart';
 
 abstract class RemoteArticleState {
   final List<ArticleEntity>? articles;
+  final int? page;
   final String? error;
 
-  const RemoteArticleState({this.articles, this.error});
+  const RemoteArticleState({this.articles, this.page = 1, this.error});
 }
 
 class RemoteArticleLoading extends RemoteArticleState {
@@ -12,8 +13,10 @@ class RemoteArticleLoading extends RemoteArticleState {
 }
 
 class RemoteArticleReady extends RemoteArticleState {
-  const RemoteArticleReady({required List<ArticleEntity> articles})
-    : super(articles: articles);
+  const RemoteArticleReady({
+    required List<ArticleEntity> articles,
+    required int page,
+  }) : super(articles: articles, page: page);
 }
 
 class RemoteArticleError extends RemoteArticleState {

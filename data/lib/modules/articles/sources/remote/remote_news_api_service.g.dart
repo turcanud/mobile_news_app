@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'news_api_service.dart';
+part of 'remote_news_api_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'news_api_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations,unused_element_parameter
 
-class _NewsApiService implements NewsApiService {
-  _NewsApiService(this._dio, {this.baseUrl, this.errorLogger}) {
+class _RemoteNewsApiService implements RemoteNewsApiService {
+  _RemoteNewsApiService(this._dio, {this.baseUrl, this.errorLogger}) {
     baseUrl ??= 'https://newsapi.org/v2';
   }
 
@@ -20,7 +20,7 @@ class _NewsApiService implements NewsApiService {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<NewsApiDto> getNewsArticles({
+  Future<NewsApiDto> getArticlesApi({
     String? query,
     String? page,
     String? pageSize,

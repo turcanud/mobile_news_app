@@ -1,10 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'news_api_dto.dart';
+part of 'index.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
+
+_SourceApiDto _$SourceApiDtoFromJson(Map<String, dynamic> json) =>
+    _SourceApiDto(id: json['id'] as String?, name: json['name'] as String?);
+
+Map<String, dynamic> _$SourceApiDtoToJson(_SourceApiDto instance) =>
+    <String, dynamic>{'id': instance.id, 'name': instance.name};
 
 _NewsApiDto _$NewsApiDtoFromJson(Map<String, dynamic> json) => _NewsApiDto(
   status: json['status'] as String?,
@@ -46,9 +52,3 @@ Map<String, dynamic> _$ArticleApiDtoToJson(_ArticleApiDto instance) =>
       'publishedAt': instance.publishedAt,
       'content': instance.content,
     };
-
-_SourceApiDto _$SourceApiDtoFromJson(Map<String, dynamic> json) =>
-    _SourceApiDto(id: json['id'] as String?, name: json['name'] as String?);
-
-Map<String, dynamic> _$SourceApiDtoToJson(_SourceApiDto instance) =>
-    <String, dynamic>{'id': instance.id, 'name': instance.name};

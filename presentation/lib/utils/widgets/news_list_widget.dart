@@ -6,14 +6,9 @@ import 'package:presentation/pages/news/bloc/remote/remote_article_bloc.dart';
 import '../../pages/news/bloc/remote/remote_article_state.dart';
 import 'news_tile_widget.dart';
 
-class NewsListWidget extends StatefulWidget {
+class NewsListWidget extends StatelessWidget {
   const NewsListWidget({super.key});
 
-  @override
-  State<NewsListWidget> createState() => _NewsListWidgetState();
-}
-
-class _NewsListWidgetState extends State<NewsListWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RemoteArticleBloc, RemoteArticleState>(
