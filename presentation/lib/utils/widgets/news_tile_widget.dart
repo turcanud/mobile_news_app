@@ -33,7 +33,9 @@ class NewsTileWidget extends StatelessWidget {
           children: [
             Expanded(
               flex: 2,
-              child: NewsTileImageWidget(imageUrl: article.urlToImage!),
+              child: NewsTileImageWidget(
+                imageUrl: article.urlToImage ?? "https://placehold.co/600x400",
+              ),
             ),
             Expanded(
               flex: 3,

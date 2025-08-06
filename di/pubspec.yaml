@@ -15,8 +15,8 @@ dependencies:
     path: ../data
   domain:
     path: ../domain
-  presentation:
-    path: ../presentation
+  common:
+    path: ../common
 
   # Add third-party dependencies here.
   dio: ^5.8.0+1

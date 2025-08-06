@@ -11,7 +11,9 @@ class CarouselWidget extends GetView<RemoteArticleController> {
   Widget build(BuildContext context) {
     return Obx(() {
       if (controller.status.value == RemoteArticleStatus.loading) {
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+          child: CircularProgressIndicator(color: Colors.black),
+        );
       } else if (controller.status.value == RemoteArticleStatus.error) {
         return Center(child: Text(controller.error.value));
       }
@@ -19,9 +21,11 @@ class CarouselWidget extends GetView<RemoteArticleController> {
         height: 272.0,
         child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: controller.articles.length,
+          itemCount: controller.carouselArticles.length - 5,
           itemBuilder: (context, index) {
-            return CarouselCardWidget(article: controller.articles[index]);
+            return CarouselCardWidget(
+              article: controller.carouselArticles[index],
+            );
           },
         ),
       );

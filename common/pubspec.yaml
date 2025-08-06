@@ -10,6 +10,9 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  # local dependencies
+
+  # 3rd party dependencies
   dio: ^5.8.0+1
   dartz: ^0.10.1
 

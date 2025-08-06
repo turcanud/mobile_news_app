@@ -13,8 +13,8 @@ class NewsTileImageWidget extends StatelessWidget {
         imageUrl: imageUrl,
         height: double.infinity,
         fit: BoxFit.cover,
-        progressIndicatorBuilder: (context, url, downloadProgress) =>
-            LinearProgressIndicator(value: downloadProgress.progress),
+        placeholder: (context, url) =>
+            LinearProgressIndicator(color: Colors.black),
         errorWidget: (context, url, error) => Icon(Icons.error),
       ),
     );

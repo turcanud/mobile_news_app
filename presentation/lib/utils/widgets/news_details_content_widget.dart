@@ -9,7 +9,7 @@ class NewsDetailsContentWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      content,
+      content + content + content,
       style: TextStyle(
         fontSize: 14.0,
         color: DesignConstants.kDefaultTextColor,

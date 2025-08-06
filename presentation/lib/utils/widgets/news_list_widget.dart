@@ -11,7 +11,9 @@ class NewsListWidget extends GetView<RemoteArticleController> {
   Widget build(BuildContext context) {
     return Obx(() {
       if (controller.status.value == RemoteArticleStatus.loading) {
-        return const Center(child: CircularProgressIndicator());
+        return const Center(
+          child: CircularProgressIndicator(color: Colors.black),
+        );
       } else if (controller.status.value == RemoteArticleStatus.error) {
         return Center(child: Text(controller.error.value));
       }

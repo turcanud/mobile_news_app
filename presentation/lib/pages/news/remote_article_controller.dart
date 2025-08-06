@@ -1,22 +1,24 @@
+import 'package:common/constants/api_constants.dart';
 import 'package:get/get.dart';
 
 import 'package:common/params.dart';
 import 'package:domain/modules/articles/entities/index/index.dart';
 import 'package:domain/modules/articles/usecases/get_article_usecase.dart';
+import 'package:get_it/get_it.dart';
 
 enum RemoteArticleStatus { loading, success, error }
 
 class RemoteArticleController extends GetxController {
-  final GetArticleUsecase _getArticleUsecase;
+  final GetArticleUsecase getArticleUsecase = GetIt.instance.get();
 
-  RemoteArticleController(this._getArticleUsecase);
+  RxList<ArticleEntity> articles = RxList<ArticleEntity>([]);
+  RxList<ArticleEntity> carouselArticles = RxList<ArticleEntity>([]);
 
-  var articles = <ArticleEntity>[].obs;
-  var page = 1.obs;
-  var status = RemoteArticleStatus.loading.obs;
-  var error = ''.obs;
-
-  final String query = 'Crime';
+  RxInt page = RxInt(1);
+  Rx<RemoteArticleStatus> status = Rx<RemoteArticleStatus>(
+    RemoteArticleStatus.loading,
+  );
+  RxString error = RxString('');
 
   @override
   void onInit() {
@@ -25,9 +27,13 @@ class RemoteArticleController extends GetxController {
   }
 
   Future<void> getArticles() async {
+    page.value = 1;
     status.value = RemoteArticleStatus.loading;
-    final result = await _getArticleUsecase(
-      params: GetArticleParams(query: query, page: '1'),
+    final result = await getArticleUsecase(
+      params: GetArticleParams(
+        query: ApiConstants.query,
+        page: page.value.toString(),
+      ),
     );
     result.fold(
       (failure) {
@@ -36,7 +42,7 @@ class RemoteArticleController extends GetxController {
       },
       (data) {
         articles.assignAll(data);
-        page.value = 1;
+        carouselArticles.assignAll(data);
         status.value = RemoteArticleStatus.success;
       },
     );
@@ -44,8 +50,11 @@ class RemoteArticleController extends GetxController {
 
   Future<void> getMoreArticles() async {
     final nextPage = page.value + 1;
-    final result = await _getArticleUsecase(
-      params: GetArticleParams(query: query, page: nextPage.toString()),
+    final result = await getArticleUsecase(
+      params: GetArticleParams(
+        query: ApiConstants.query,
+        page: nextPage.toString(),
+      ),
     );
     result.fold(
       (failure) {

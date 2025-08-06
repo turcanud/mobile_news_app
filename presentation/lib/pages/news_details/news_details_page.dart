@@ -20,6 +20,7 @@ class NewsDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        surfaceTintColor: Colors.white,
         backgroundColor: Colors.white,
         elevation: 0,
         iconTheme: IconThemeData(color: DesignConstants.kPrimaryColor),
@@ -35,8 +36,8 @@ class NewsDetailsPage extends StatelessWidget {
                 imageUrl: article.urlToImage!,
                 height: 280.0,
                 fit: BoxFit.cover,
-                progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    LinearProgressIndicator(value: downloadProgress.progress),
+                placeholder: (context, url) =>
+                    LinearProgressIndicator(color: Colors.black),
                 errorWidget: (context, url, error) => Icon(Icons.error),
               ),
             ),

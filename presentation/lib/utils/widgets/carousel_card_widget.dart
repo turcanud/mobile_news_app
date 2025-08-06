@@ -30,8 +30,8 @@ class CarouselCardWidget extends StatelessWidget {
                 fit: BoxFit.cover,
                 width: 350.0,
                 height: double.infinity,
-                progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    LinearProgressIndicator(value: downloadProgress.progress),
+                placeholder: (context, url) =>
+                    LinearProgressIndicator(color: Colors.black),
                 errorWidget: (context, url, error) => Icon(Icons.error),
               ),
             ),
