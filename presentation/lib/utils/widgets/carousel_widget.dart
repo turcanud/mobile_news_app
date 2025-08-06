@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../pages/news/remote_article_controller.dart';
 import 'carousel_card_widget.dart';
 

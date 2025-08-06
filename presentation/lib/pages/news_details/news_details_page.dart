@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import 'package:common/constants/api_constants.dart';
 import 'package:domain/modules/articles/entities/index/index.dart';
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/constants/design_constants.dart';
 import '../../utils/widgets/news_details_analytics_widget.dart';

@@ -1,9 +1,10 @@
-import 'package:di/init_di.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:presentation/pages/news/bindings/remote_article_binding.dart';
+
+import 'package:di/init_di.dart';
 
 import 'core/constants/design_constants.dart';
+import 'pages/news/bindings/remote_article_binding.dart';
 import 'pages/news/news_page.dart';
 
 Future<void> main() async {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'News App',
+      title: 'Mobile News App',
       initialBinding: RemoteArticleBinding(),
       home: Scaffold(
         backgroundColor: DesignConstants.kBackgroundColor,

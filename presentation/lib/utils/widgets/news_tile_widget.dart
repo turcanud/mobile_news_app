@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+
 import 'package:common/constants/api_constants.dart';
 import 'package:domain/modules/articles/entities/index/index.dart';
-import 'package:flutter/material.dart';
-import 'package:presentation/core/constants/design_constants.dart';
 
+import '../../core/constants/design_constants.dart';
 import '../../pages/news_details/news_details_page.dart';
 import 'news_tile_image_widget.dart';
 import 'news_tile_info_widget.dart';

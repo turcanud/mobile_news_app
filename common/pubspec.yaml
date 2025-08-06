@@ -1,3 +1,5 @@
+publish_to: none
+
 name: common
 description: A sample command-line application.
 version: 1.0.0
@@ -10,7 +12,6 @@ environment:
 dependencies:
   dio: ^5.8.0+1
   dartz: ^0.10.1
-  # path: ^1.8.0
 
 dev_dependencies:
   lints: ^5.0.0

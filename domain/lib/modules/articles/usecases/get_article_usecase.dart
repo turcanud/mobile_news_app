@@ -16,6 +16,6 @@ class GetArticleUsecase
   Future<Either<Failure, List<ArticleEntity>>> call({
     required GetArticleParams params,
   }) {
-    return _articleRepository.getNewsArticles(params: params!);
+    return _articleRepository.getNewsArticles(params: params);
   }
 }

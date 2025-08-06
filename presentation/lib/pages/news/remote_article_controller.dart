@@ -1,6 +1,7 @@
-import 'package:domain/modules/articles/entities/index/index.dart';
 import 'package:get/get.dart';
+
 import 'package:common/params.dart';
+import 'package:domain/modules/articles/entities/index/index.dart';
 import 'package:domain/modules/articles/usecases/get_article_usecase.dart';
 
 enum RemoteArticleStatus { loading, success, error }

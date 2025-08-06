@@ -1,5 +1,6 @@
-import 'package:common/helpers/strings_handler.dart';
 import 'package:flutter/material.dart';
+
+import 'package:common/helpers/strings_handler.dart';
 
 import '../../core/constants/design_constants.dart';
 
