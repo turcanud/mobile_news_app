@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:presentation/core/constants/colors_constants.dart';
 
-import '../../core/constants/design_constants.dart';
 import 'news_tile_info_author_widget.dart';
 import 'news_tile_info_category_widget.dart';
 import 'news_tile_info_comments_widget.dart';
@@ -34,7 +34,7 @@ class NewsTileInfoWidget extends StatelessWidget {
             style: TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.w600,
-              color: DesignConstants.kDefaultTextColor,
+              color: ColorsConstants.kDefaultTextColor,
             ),
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
@@ -68,7 +68,7 @@ class NewsTileInfoWidget extends StatelessWidget {
                 ),
                 Icon(
                   Icons.bookmark_outline_outlined,
-                  color: DesignConstants.kPrimaryColor,
+                  color: ColorsConstants.kPrimaryColor,
                   size: 20.0,
                 ),
               ],

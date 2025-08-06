@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../core/constants/design_constants.dart';
+import 'package:presentation/core/constants/colors_constants.dart';
 
 class NewsDetailsHashtagsWidget extends StatelessWidget {
   final List<String> hashtags;
@@ -15,7 +14,7 @@ class NewsDetailsHashtagsWidget extends StatelessWidget {
         return OutlinedButton(
           onPressed: () {},
           style: OutlinedButton.styleFrom(
-            side: BorderSide(color: DesignConstants.kPrimaryColor, width: 1.8),
+            side: BorderSide(color: ColorsConstants.kPrimaryColor, width: 1.8),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24.0),
             ),
@@ -24,7 +23,7 @@ class NewsDetailsHashtagsWidget extends StatelessWidget {
           child: Text(
             hashtag,
             style: TextStyle(
-              color: DesignConstants.kPrimaryColor,
+              color: ColorsConstants.kPrimaryColor,
               fontSize: 14.0,
               fontWeight: FontWeight.w700,
             ),

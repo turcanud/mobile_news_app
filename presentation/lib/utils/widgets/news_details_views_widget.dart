@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:common/helpers/strings_handler.dart';
-
-import '../../core/constants/design_constants.dart';
+import 'package:presentation/core/constants/colors_constants.dart';
 
 class NewsDetailsViewsWidget extends StatelessWidget {
   final int views;
@@ -14,13 +13,13 @@ class NewsDetailsViewsWidget extends StatelessWidget {
       children: [
         Icon(
           Icons.visibility,
-          color: DesignConstants.kPrimaryColor,
+          color: ColorsConstants.kPrimaryColor,
           size: 20.0,
         ),
         const SizedBox(width: 4.0),
         Text(
           StringsHandler.handleNumbers(views),
-          style: TextStyle(color: DesignConstants.kDefaultTextColor),
+          style: TextStyle(color: ColorsConstants.kDefaultTextColor),
         ),
       ],
     );

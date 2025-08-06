@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/design_constants.dart';
+import '../../core/constants/colors_constants.dart';
 
 class HeaderSectionWidget extends StatelessWidget {
   final String title;
@@ -20,7 +20,7 @@ class HeaderSectionWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w600,
-            color: DesignConstants.kDefaultTextColor,
+            color: ColorsConstants.kDefaultTextColor,
           ),
         ),
         const Spacer(),
@@ -32,7 +32,7 @@ class HeaderSectionWidget extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: DesignConstants.kPrimaryColor,
+                color: ColorsConstants.kPrimaryColor,
               ),
             ),
           ),

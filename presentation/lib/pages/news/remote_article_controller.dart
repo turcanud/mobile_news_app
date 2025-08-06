@@ -1,10 +1,10 @@
 import 'package:common/constants/api_constants.dart';
 import 'package:get/get.dart';
+import 'package:get_it/get_it.dart';
 
 import 'package:common/params.dart';
 import 'package:domain/modules/articles/entities/index/index.dart';
 import 'package:domain/modules/articles/usecases/get_article_usecase.dart';
-import 'package:get_it/get_it.dart';
 
 enum RemoteArticleStatus { loading, success, error }
 

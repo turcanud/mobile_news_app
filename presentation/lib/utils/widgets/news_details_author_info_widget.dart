@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/design_constants.dart';
+import '../../core/constants/colors_constants.dart';
 import 'news_details_author_and_date_widget.dart';
 
 class NewsDetailsAuthorInfoWidget extends StatelessWidget {
@@ -26,7 +26,7 @@ class NewsDetailsAuthorInfoWidget extends StatelessWidget {
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-            backgroundColor: DesignConstants.kPrimaryColor,
+            backgroundColor: ColorsConstants.kPrimaryColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(24.0),
             ),

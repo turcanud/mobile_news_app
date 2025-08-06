@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:common/constants/api_constants.dart';
 import 'package:domain/modules/articles/entities/index/index.dart';
+import 'package:presentation/core/constants/images_constants.dart';
 
-import '../../core/constants/design_constants.dart';
 import '../../pages/news_details/news_details_page.dart';
 import 'news_tile_image_widget.dart';
 import 'news_tile_info_widget.dart';
@@ -42,7 +42,7 @@ class NewsTileWidget extends StatelessWidget {
               child: NewsTileInfoWidget(
                 title: article.title!,
                 author: article.source!.name!,
-                profileImagePath: DesignConstants.kDefaultProfileImage,
+                profileImagePath: ImagesConstants.kDefaultProfileImage,
                 category: ApiConstants.query,
                 likes: 10000,
                 comments: 1000,

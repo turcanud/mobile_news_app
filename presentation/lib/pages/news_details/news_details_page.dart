@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:presentation/core/constants/colors_constants.dart';
+import 'package:presentation/core/constants/dimensions_constants.dart';
+import 'package:presentation/core/constants/images_constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'package:common/constants/api_constants.dart';
 import 'package:domain/modules/articles/entities/index/index.dart';
 
-import '../../core/constants/design_constants.dart';
 import '../../utils/widgets/news_details_analytics_widget.dart';
 import '../../utils/widgets/news_details_author_info_widget.dart';
 import '../../utils/widgets/news_details_content_widget.dart';
@@ -23,11 +25,11 @@ class NewsDetailsPage extends StatelessWidget {
         surfaceTintColor: Colors.white,
         backgroundColor: Colors.white,
         elevation: 0,
-        iconTheme: IconThemeData(color: DesignConstants.kPrimaryColor),
+        iconTheme: IconThemeData(color: ColorsConstants.kPrimaryColor),
       ),
       backgroundColor: Colors.white,
       body: Container(
-        margin: DesignConstants.kDefaultMargin,
+        margin: DimensionsConstants.kDefaultMargin,
         child: ListView(
           children: <Widget>[
             ClipRRect(
@@ -53,7 +55,7 @@ class NewsDetailsPage extends StatelessWidget {
             const SizedBox(height: 12.0),
             NewsDetailsAuthorInfoWidget(
               author: article.source!.name!,
-              authorImage: DesignConstants.kDefaultProfileImage,
+              authorImage: ImagesConstants.kDefaultProfileImage,
               postedDate: article.publishedAt!,
             ),
             const SizedBox(height: 15.0),
@@ -63,7 +65,7 @@ class NewsDetailsPage extends StatelessWidget {
             TextButton(
               //style for the button
               style: TextButton.styleFrom(
-                backgroundColor: DesignConstants.kPrimaryColor,
+                backgroundColor: ColorsConstants.kPrimaryColor,
               ),
               onPressed: () {
                 launchUrl(

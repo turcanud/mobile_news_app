@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 
 import 'package:di/init_di.dart';
 
-import 'core/constants/design_constants.dart';
-import 'pages/news/bindings/remote_article_binding.dart';
+import 'core/constants/colors_constants.dart';
+import 'core/constants/dimensions_constants.dart';
 import 'pages/news/news_page.dart';
 
 Future<void> main() async {
@@ -20,12 +20,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mobile News App',
-      initialBinding: RemoteArticleBinding(),
       home: Scaffold(
-        backgroundColor: DesignConstants.kBackgroundColor,
+        backgroundColor: ColorsConstants.kBackgroundColor,
         body: SafeArea(
           child: Container(
-            margin: DesignConstants.kDefaultMargin,
+            margin: DimensionsConstants.kDefaultMargin,
             child: NewsPage(),
           ),
         ),

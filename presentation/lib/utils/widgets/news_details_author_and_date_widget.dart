@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/design_constants.dart';
+import '../../core/constants/colors_constants.dart';
 
 class NewsDetailsAuthorAndDateWidget extends StatelessWidget {
   final String author;
@@ -28,7 +28,7 @@ class NewsDetailsAuthorAndDateWidget extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 14.0,
-                  color: DesignConstants.kPrimaryColor,
+                  color: ColorsConstants.kPrimaryColor,
                 ),
               ),
               const SizedBox(height: 4.0),
@@ -37,7 +37,7 @@ class NewsDetailsAuthorAndDateWidget extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 10.0,
                   fontWeight: FontWeight.w600,
-                  color: DesignConstants.kDefaultTextColor,
+                  color: ColorsConstants.kDefaultTextColor,
                 ),
               ),
             ],

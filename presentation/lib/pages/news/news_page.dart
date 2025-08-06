@@ -15,9 +15,13 @@ class NewsPage extends StatefulWidget {
 }
 
 class _NewsPageState extends State<NewsPage> {
-  final controller = Get.find<RemoteArticleController>();
+  RemoteArticleController get controller => Get.find();
 
-  //RemoteArticleController get controller => Get.find<RemoteArticleController>();
+  @override
+  void initState() {
+    super.initState();
+    Get.lazyPut(() => RemoteArticleController());
+  }
 
   final RefreshController _refreshController = RefreshController(
     initialRefresh: false,
@@ -35,23 +39,32 @@ class _NewsPageState extends State<NewsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SmartRefresher(
-      controller: _refreshController,
-      enablePullDown: true,
-      enablePullUp: true,
-      onLoading: _onLoading,
-      onRefresh: _onRefresh,
-      header: WaterDropMaterialHeader(backgroundColor: Colors.black),
-      child: ListView(
-        children: <Widget>[
-          HeaderSectionWidget(title: "Featured"),
-          const SizedBox(height: 8.0),
-          CarouselWidget(),
-          const SizedBox(height: 8.0),
-          HeaderSectionWidget(title: "News"),
-          NewsListWidget(),
-        ],
-      ),
-    );
+    return Obx(() {
+      if (controller.status.value == RemoteArticleStatus.loading) {
+        return const Center(
+          child: CircularProgressIndicator(color: Colors.black),
+        );
+      } else if (controller.status.value == RemoteArticleStatus.error) {
+        return Center(child: Text(controller.error.value));
+      }
+      return SmartRefresher(
+        controller: _refreshController,
+        enablePullDown: true,
+        enablePullUp: true,
+        onLoading: _onLoading,
+        onRefresh: _onRefresh,
+        header: WaterDropMaterialHeader(backgroundColor: Colors.black),
+        child: ListView(
+          children: <Widget>[
+            HeaderSectionWidget(title: "Featured"),
+            const SizedBox(height: 8.0),
+            CarouselWidget(controller: controller),
+            const SizedBox(height: 8.0),
+            HeaderSectionWidget(title: "News"),
+            NewsListWidget(controller: controller),
+          ],
+        ),
+      );
+    });
   }
 }

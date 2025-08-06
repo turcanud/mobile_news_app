@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../core/constants/design_constants.dart';
+import 'package:presentation/core/constants/colors_constants.dart';
 
 class NewsDetailsContentWidget extends StatelessWidget {
   final String content;
@@ -12,7 +11,7 @@ class NewsDetailsContentWidget extends StatelessWidget {
       content + content + content,
       style: TextStyle(
         fontSize: 14.0,
-        color: DesignConstants.kDefaultTextColor,
+        color: ColorsConstants.kDefaultTextColor,
         fontWeight: FontWeight.w400,
       ),
     );

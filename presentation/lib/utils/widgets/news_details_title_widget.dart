@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../core/constants/design_constants.dart';
+import '../../core/constants/colors_constants.dart';
 
 class NewsDetailsTitleWidget extends StatelessWidget {
   final String title;
@@ -13,7 +13,7 @@ class NewsDetailsTitleWidget extends StatelessWidget {
       style: TextStyle(
         fontSize: 22.0,
         fontWeight: FontWeight.w600,
-        color: DesignConstants.kDefaultTextColor,
+        color: ColorsConstants.kDefaultTextColor,
       ),
     );
   }

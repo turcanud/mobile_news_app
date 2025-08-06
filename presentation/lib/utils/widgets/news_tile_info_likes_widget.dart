@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:common/helpers/strings_handler.dart';
-
-import '../../core/constants/design_constants.dart';
+import 'package:presentation/core/constants/colors_constants.dart';
 
 class NewsTileInfoLikesWidget extends StatelessWidget {
   final int likes;
@@ -12,11 +11,11 @@ class NewsTileInfoLikesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(Icons.thumb_up, color: DesignConstants.kPrimaryColor, size: 20.0),
+        Icon(Icons.thumb_up, color: ColorsConstants.kPrimaryColor, size: 20.0),
         const SizedBox(width: 4.0),
         Text(
           StringsHandler.handleNumbers(likes),
-          style: TextStyle(color: DesignConstants.kDefaultTextColor),
+          style: TextStyle(color: ColorsConstants.kDefaultTextColor),
         ),
       ],
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../core/constants/design_constants.dart';
+import 'package:presentation/core/constants/colors_constants.dart';
 
 class NewsTileInfoCategoryWidget extends StatelessWidget {
   final String category;
@@ -13,7 +12,7 @@ class NewsTileInfoCategoryWidget extends StatelessWidget {
       style: OutlinedButton.styleFrom(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         minimumSize: Size.zero,
-        side: BorderSide(color: DesignConstants.kPrimaryColor, width: 1.0),
+        side: BorderSide(color: ColorsConstants.kPrimaryColor, width: 1.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24.0),
         ),
@@ -21,7 +20,7 @@ class NewsTileInfoCategoryWidget extends StatelessWidget {
       child: Text(
         category,
         style: TextStyle(
-          color: DesignConstants.kPrimaryColor,
+          color: ColorsConstants.kPrimaryColor,
           fontSize: 12.0,
           fontWeight: FontWeight.w500,
         ),

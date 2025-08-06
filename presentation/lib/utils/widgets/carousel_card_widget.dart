@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 import 'package:domain/modules/articles/entities/index/index.dart';
+import 'package:presentation/core/constants/colors_constants.dart';
 
-import '../../core/constants/design_constants.dart';
 import '../../pages/news_details/news_details_page.dart';
 
 class CarouselCardWidget extends StatelessWidget {
@@ -70,7 +70,7 @@ class CarouselCardWidget extends StatelessWidget {
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: DesignConstants.kPrimaryColor,
+                  backgroundColor: ColorsConstants.kPrimaryColor,
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(24.0),

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:common/helpers/strings_handler.dart';
-
-import '../../core/constants/design_constants.dart';
+import 'package:presentation/core/constants/colors_constants.dart';
 
 class NewsTileInfoAuthorWidget extends StatelessWidget {
   final String profileImagePath;
@@ -32,7 +31,7 @@ class NewsTileInfoAuthorWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 14.0,
             fontWeight: FontWeight.w600,
-            color: DesignConstants.kDefaultTextColor,
+            color: ColorsConstants.kDefaultTextColor,
           ),
         ),
       ],
